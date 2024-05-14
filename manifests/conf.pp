@@ -38,15 +38,15 @@
 #   }
 #
 define sudo::conf (
-  $ensure           = present,
-  $priority         = 10,
-  $content          = undef,
-  $source           = undef,
-  $template         = undef,
-  $template_epp     = undef,
-  $sudo_config_dir  = undef,
-  $sudo_file_name   = undef,
-  $sudo_syntax_path = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+                                  $ensure           = present,
+                                  $priority         = 10,
+                                  $content          = undef,
+                                  $source           = undef,
+                                  $template         = undef,
+  Optional[Hash[String[1], Hash]] $template_epp     = undef,
+                                  $sudo_config_dir  = undef,
+                                  $sudo_file_name   = undef,
+                                  $sudo_syntax_path = '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 ) {
   include sudo
 
